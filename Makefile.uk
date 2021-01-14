@@ -50,7 +50,8 @@ $(eval $(call fetch,libparistraceroute,$(LIBPARISTRACEROUTE_URL)))
 ################################################################################
 # Helpers
 ################################################################################
-LIBPARISTRACEROUTE_SRC = $(LIBPARISTRACEROUTE_ORIGIN)/$(LIBPARISTRACEROUTE_SUBDIR)
+LIBPARISTRACEROUTE_TRACEROUTESRC = $(LIBPARISTRACEROUTE_ORIGIN)/$(LIBPARISTRACEROUTE_SUBDIR)/paris-traceroute
+LIBPARISTRACEROUTE_SRC = $(LIBPARISTRACEROUTE_ORIGIN)/$(LIBPARISTRACEROUTE_SUBDIR)/libparistraceroute
 
 ################################################################################
 # Library includes
