@@ -41,7 +41,7 @@ $(eval $(call addlib_s,libparistraceroute,$(CONFIG_LIBPARISTRACEROUTE)))
 ################################################################################]
 LIBPARISTRACEROUTE_VERSION = v0.93
 LIBPARISTRACEROUTE_URL = https://github.com/libparistraceroute/libparistraceroute/archive/$(LIBS_VERSION).zip
-LIBPARISTRACEROUTE_SUBDIR = paristraceroute-$(LIBPARISTRACEROUTE_VERSION)
+LIBPARISTRACEROUTE_SUBDIR = libparistraceroute-$(LIBPARISTRACEROUTE_VERSION)
 LIBPARISTRACEROUTE_PATCHDIR = $(LIBPARISTRACEROUTE_BASE)/patches
 $(eval $(call patch,libparistraceroute,$(LIBPARISTRACEROUTE_PATCHDIR),$(LIBPARISTRACEROUTE_SUBDIR)))
 $(eval $(call fetch,libparistraceroute,$(LIBPARISTRACEROUTE_URL)))
