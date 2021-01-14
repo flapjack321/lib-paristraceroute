@@ -1,0 +1,21 @@
+features:
+  - name: with_gitignore
+    enabled: true
+    resources:
+      - .gitignore
+  - name: with_docs
+    enabled: true
+    resources:
+      - README.md
+      - COPYING.md
+      - MAINTAINERS.md
+      - CODING_STYLE.md
+      - CONTRIBUTING.md
+  - name: provide_main
+    enabled: false
+    resources:
+      - main.c
+  - name: with_patchedir
+    enabled: t
+    resources:
+      - patches/

@@ -1,0 +1,10 @@
+menuconfig LIBPARISTRACEROUTE
+	bool "Port of paristraceroute"
+	default n
+
+if LIBPARISTRACEROUTE
+config LIBPARISTRACEROUTE_MAIN_FUNCTION
+	bool "Provide main function"
+	default n
+
+endif
