@@ -1,0 +1,34 @@
+From d3a21e496a77e551d7bbf6e6d23129de0db59d76 Mon Sep 17 00:00:00 2001
+From: Ethan Cotterell <ethancotterell@gmail.com>
+Date: Mon, 18 Jan 2021 12:51:25 +0000
+Subject: [PATCH] include: removed dependency on eventpoll.h
+
+---
+ libparistraceroute/os/sys/eventpoll.h | 12 +++---------
+ 1 file changed, 3 insertions(+), 9 deletions(-)
+
+diff --git a/libparistraceroute/os/sys/eventpoll.h b/libparistraceroute/os/sys/eventpoll.h
+index 9c50762..b0c6731 100644
+--- a/libparistraceroute/os/sys/eventpoll.h
++++ b/libparistraceroute/os/sys/eventpoll.h
+@@ -3,14 +3,8 @@
+ 
+ #include "../os.h"
+ 
+-#ifdef LINUX
+-#  include <sys/eventpoll.h>
+-#endif
+-
+-#ifdef FREEBSD
+-#  define EPOLL_CTL_ADD 1
+-#  define EPOLL_CTL_DEL 2
+-#  define EPOLL_CTL_MOD 3
+-#endif
++#define EPOLL_CTL_ADD 1
++#define EPOLL_CTL_DEL 2
++#define EPOLL_CTL_MOD 3
+ 
+ #endif // OS_SYS_EVENTPOLL
+-- 
+2.25.1
+

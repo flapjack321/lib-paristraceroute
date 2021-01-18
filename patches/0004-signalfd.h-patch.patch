@@ -1,0 +1,39 @@
+From 8a073cae6c396ae63b684c89fa84a5e464062a34 Mon Sep 17 00:00:00 2001
+From: Ethan Cotterell <ethancotterell@gmail.com>
+Date: Mon, 18 Jan 2021 13:53:34 +0000
+Subject: [PATCH] signalfd.h patch
+
+---
+ libparistraceroute/os/sys/signalfd.h | 10 ++--------
+ 1 file changed, 2 insertions(+), 8 deletions(-)
+
+diff --git a/libparistraceroute/os/sys/signalfd.h b/libparistraceroute/os/sys/signalfd.h
+index 42a5cbd..1289232 100644
+--- a/libparistraceroute/os/sys/signalfd.h
++++ b/libparistraceroute/os/sys/signalfd.h
+@@ -3,13 +3,8 @@
+ 
+ #include "../os.h"
+ 
+-#ifdef LINUX
+-#  include <sys/signalfd.h>
+-#endif
+-
+-#ifdef FREEBSD
+-#  include <stdio.h>
+-#  include <signal.h>
++#include <stdio.h>
++#include <signal.h>
+ 
+ typedef __signed__ char __s8;
+ typedef unsigned char __u8;
+@@ -56,6 +51,5 @@ struct signalfd_siginfo {
+ 
+ int signalfd(int fd, const sigset_t *mask, int flags);
+ 
+-#endif
+ 
+ #endif // OS_SYS_EPOLL
+-- 
+2.25.1
+

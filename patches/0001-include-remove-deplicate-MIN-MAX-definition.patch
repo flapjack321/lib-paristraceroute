@@ -1,0 +1,34 @@
+From 14ca5eb4d1aab5c81a638780ddc66b65ae26f3ce Mon Sep 17 00:00:00 2001
+From: Ethan Cotterell <ethancotterell@gmail.com>
+Date: Mon, 18 Jan 2021 12:09:51 +0000
+Subject: [PATCH] include: remove deplicate MIN/MAX definition
+
+---
+ libparistraceroute/common.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/libparistraceroute/common.h b/libparistraceroute/common.h
+index fd9eb7f..4e132e2 100644
+--- a/libparistraceroute/common.h
++++ b/libparistraceroute/common.h
+@@ -50,7 +50,7 @@
+  * \return The min of x and y
+  */
+ 
+-#define MIN(x, y) ((x) < (y) ? (x) : (y))
++// #define MIN(x, y) ((x) < (y) ? (x) : (y))
+ 
+ /**
+  * \brief Macro returning the maximal value of two elements
+@@ -59,7 +59,7 @@
+  * \return The max of x and y
+  */
+ 
+-#define MAX(x, y) ((x) > (y) ? (x) : (y))
++// #define MAX(x, y) ((x) > (y) ? (x) : (y))
+ 
+ /**
+  * \return The current timestamp (in seconds)
+-- 
+2.25.1
+

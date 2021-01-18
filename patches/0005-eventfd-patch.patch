@@ -1,0 +1,39 @@
+From e654ffff076eb7b475789a7d4b5b58f823fcce20 Mon Sep 17 00:00:00 2001
+From: Ethan Cotterell <ethancotterell@gmail.com>
+Date: Mon, 18 Jan 2021 14:03:50 +0000
+Subject: [PATCH] eventfd-patch
+
+---
+ libparistraceroute/os/sys/eventfd.h | 10 ++--------
+ 1 file changed, 2 insertions(+), 8 deletions(-)
+
+diff --git a/libparistraceroute/os/sys/eventfd.h b/libparistraceroute/os/sys/eventfd.h
+index 426c97c..88498cd 100644
+--- a/libparistraceroute/os/sys/eventfd.h
++++ b/libparistraceroute/os/sys/eventfd.h
+@@ -3,13 +3,8 @@
+ 
+ #include "../os.h"
+ 
+-#ifdef LINUX
+-#  include <sys/eventfd.h>
+-#endif
+-
+-#ifdef FREEBSD
+-#  include <stdio.h>
+-#  include <stdint.h>
++#include <stdio.h>
++#include <stdint.h>
+ 
+ /* Type for event counter.  */
+ typedef uint64_t eventfd_t;
+@@ -28,6 +23,5 @@ enum
+ int eventfd(unsigned int initval, int flags);
+ int eventfd_write(unsigned int initval, int flags);
+ 
+-#endif
+ 
+ #endif // OS_SYS_EVENTFD
+-- 
+2.25.1
+
