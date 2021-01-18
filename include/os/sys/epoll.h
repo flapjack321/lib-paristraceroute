@@ -3,14 +3,14 @@
 
 #include "../os.h"
 
-#ifdef LINUX
-#  include <sys/epoll.h>
-#endif
+// #ifdef LINUX
+// #  include <sys/epoll.h>
+// #endif
 
-#ifdef FREEBSD
-#  include "eventpoll.h"
-#  include <stdio.h>
-#  include <stdint.h>
+// #ifdef FREEBSD
+#include "eventpoll.h"
+#include <stdio.h>
+#include <stdint.h>
 
 typedef union epoll_data
 {
@@ -64,6 +64,6 @@ int epoll_create1(int flags);
 int epoll_ctl(int epfd, int op, int fd, struct epoll_event *event);
 int epoll_wait(int epfd, struct epoll_event *events, int maxevents, int timeout);
 
-#endif
+// #endif
 
 #endif // OS_SYS_EPOLL
